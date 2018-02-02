@@ -2,18 +2,16 @@
 
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
   parserOptions: {
+    parser: 'babel-eslint',
     sourceType: 'module'
   },
   env: {
     browser: true,
   },
-  extends: 'airbnb-base',
+  extends: ['prettier', 'prettier/standard', 'plugin:vue/recommended'],
   // required to lint *.vue files
-  plugins: [
-    'html'
-  ],
+  plugins: ['vue', 'prettier'],
   // check if imports actually resolve
   'settings': {
     'import/resolver': {
@@ -24,6 +22,7 @@ module.exports = {
   },
   // add your custom rules here
   'rules': {
+    'prettier/prettier': 'off',
     // don't require .vue extension when importing
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
@@ -31,9 +30,16 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', {
       'optionalDependencies': ['test/unit/index.js']
     }],
+    'import/no-extraneous-dependencies': 'off',
+
+    'vue/require-prop-types': 'off',
+    'vue/html-indent': 'off',
+    'vue/max-attributes-per-line': 'off',
+
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
 
+    'quotes': ['error', 'single', { 'avoidEscape': true }],
     'arrow-body-style': 'off',
     'no-param-reassign': 'off',
     'no-underscore-dangle': 'off',
@@ -42,5 +48,6 @@ module.exports = {
     'no-return-assign': 'off',
     'no-plusplus': 'off',
     'consistent-return': 'off'
-  }
+  },
+
 }

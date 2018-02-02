@@ -8,7 +8,7 @@
       :r="checkerRadius"
       :fill="adjustedColor"
       :fill-opacity="opacity"
-      />
+    />
   </transition>
 </template>
 
@@ -36,9 +36,11 @@ export default {
     row() {
       return this.checker.row;
     },
+
     col() {
       return this.checker.col;
     },
+
     color() {
       return this.checker.color;
     },

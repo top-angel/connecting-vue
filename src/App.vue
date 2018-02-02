@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h3>Connect Four</h3>
-    <game-container></game-container>
+    <game-container />
   </div>
 </template>
 
@@ -9,7 +9,6 @@
 import GameContainer from '@/components/GameContainer';
 
 export default {
-  name: 'app',
   components: {
     GameContainer,
   },

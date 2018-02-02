@@ -1,6 +1,8 @@
 <template>
-  <svg :x="col * cellSize" y="0">
-    <g @click="drop(col)" class="column">
+  <svg :x="col * cellSize"
+    y="0">
+    <g @click="drop(col)"
+     class="column">
       <board-checker
         v-for="checker in checkers"
         :key="key(checker)"
@@ -30,6 +32,10 @@ import { OVER } from '@/utils';
 import BoardChecker from './BoardChecker.vue';
 
 export default {
+  components: {
+    BoardChecker,
+  },
+
   props: [
     'checkers',
     'col',
@@ -41,10 +47,6 @@ export default {
     'mask',
     'status',
   ],
-
-  components: {
-    BoardChecker,
-  },
 
   computed: {
     // Find the current max occupied row and add 1

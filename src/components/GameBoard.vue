@@ -4,11 +4,11 @@
     class="game-board" stroke="none">
     <defs>
       <pattern :id="patternId" patternUnits="userSpaceOnUse" :width="cellSize" :height="cellSize">
-        <circle :cx="cellSize / 2" :cy="cellSize / 2" :r="checkerRadius" fill="black"></circle>
+        <circle :cx="cellSize / 2" :cy="cellSize / 2" :r="checkerRadius" fill="black" />
       </pattern>
       <mask :id="maskId">
-        <rect :width="cellSize" :height="boardHeight" fill="white"></rect>
-        <rect :width="cellSize" :height="boardHeight" :fill="pattern"></rect>
+        <rect :width="cellSize" :height="boardHeight" fill="white" />
+        <rect :width="cellSize" :height="boardHeight" :fill="pattern" />
       </mask>
     </defs>
     <board-column
@@ -17,10 +17,10 @@
       :checkers="colCheckers(col)"
       :col="col"
       :color="'cadetblue'"
-      :cellSize="cellSize"
-      :checkerRadius="checkerRadius"
-      :boardHeight="boardHeight"
-      :rowCount="rowCount"
+      :cell-size="cellSize"
+      :checker-radius="checkerRadius"
+      :board-height="boardHeight"
+      :row-count="rowCount"
       :mask="mask"
       :status="status"
       @drop="drop"
@@ -34,10 +34,10 @@ import { cssUrl, range } from '@/utils';
 import BoardColumn from './BoardColumn.vue';
 
 export default {
-  props: ['checkers', 'rowCount', 'colCount', 'status'],
   components: {
     BoardColumn,
   },
+  props: ['checkers', 'rowCount', 'colCount', 'status'],
 
   data() {
     return {

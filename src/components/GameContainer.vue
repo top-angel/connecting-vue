@@ -5,12 +5,12 @@
     </p>
     <game-board
       :checkers="checkers"
-      :rowCount="rowCount"
-      :colCount="colCount"
+      :row-count="rowCount"
+      :col-count="colCount"
       :status="status"
       @drop="drop"
       @land="land"
-      ></game-board>
+      />
     <p v-if="gameOver">
       {{ overMessage }}
       <a href="#" @click="reset">Play again</a>
