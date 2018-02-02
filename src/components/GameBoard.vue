@@ -37,6 +37,7 @@ export default {
   components: {
     BoardColumn,
   },
+
   props: ['checkers', 'rowCount', 'colCount', 'status'],
 
   data() {

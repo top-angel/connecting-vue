@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <svg-icon :path="'logo.svg'" class="logo-svg" />
     <h3>Connect Four</h3>
     <game-container />
   </div>
@@ -7,10 +8,12 @@
 
 <script>
 import GameContainer from '@/components/GameContainer';
+import SvgIcon from '@/components/SvgIcon';
 
 export default {
   components: {
     GameContainer,
+    SvgIcon,
   },
 };
 </script>
@@ -22,6 +25,20 @@ body {
 
 a {
   text-decoration: none;
+}
+
+.logo {
+  display: inline-block;
+}
+
+.logo h3 {
+  margin: 0;
+}
+
+.logo-svg {
+  display: block;
+  margin: 0 auto;
+  width: 75px;
 }
 
 #app {
