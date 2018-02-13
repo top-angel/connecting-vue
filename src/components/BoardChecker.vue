@@ -15,7 +15,7 @@
 <script>
 import { TweenMax, Bounce } from 'gsap';
 
-import { OVER } from '@/utils';
+import { OVER } from '@/constants';
 
 export default {
   props: ['checker', 'cellSize', 'rowCount', 'checkerRadius', 'status'],

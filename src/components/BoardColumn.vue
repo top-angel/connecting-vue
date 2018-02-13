@@ -28,8 +28,8 @@
 </template>
 
 <script>
-import { OVER } from '@/utils';
-import BoardChecker from './BoardChecker.vue';
+import { OVER } from '@/constants';
+import BoardChecker from './BoardChecker';
 
 export default {
   components: {

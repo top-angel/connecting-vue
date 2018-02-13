@@ -11,25 +11,27 @@
       @drop="drop"
       @land="land"
       />
-    <p v-if="gameOver">
-      {{ overMessage }}
-      <a href="#" @click="reset">Play again</a>
-    </p>
-    <p v-else>
-      {{ whoseTurn }}
-    </p>
+    <score-board
+      :moves="moves"
+      :winner="winner"
+      :player-color="playerColor"
+      :status="status"
+      @reset="reset"
+      />
   </div>
 </template>
 
 <script>
 import Vue from 'vue';
 
-import { min, max, RED, BLACK, EMPTY, PLAY, OVER, titleize, key } from '@/utils';
+import { min, max, key } from '@/utils';
+import { RED, BLACK, EMPTY, PLAY, OVER } from '@/constants';
 import GameBoard from './GameBoard';
+import ScoreBoard from './ScoreBoard';
 
 export default {
   components: {
-    GameBoard,
+    GameBoard, ScoreBoard
   },
 
   data() {
@@ -46,19 +48,8 @@ export default {
   },
 
   computed: {
-    overMessage() {
-      if (this.winner) {
-        return `${titleize(this.winner.color)} wins!`;
-      }
-      return 'It\'s a draw!';
-    },
-
     moves() {
       return Object.values(this.checkers);
-    },
-
-    whoseTurn() {
-      return `${titleize(this.playerColor)} goes ${this.moves.length === 0 ? 'first' : 'next'}`;
     },
 
     gameOver() {

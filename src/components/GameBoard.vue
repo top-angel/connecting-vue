@@ -31,7 +31,7 @@
 
 <script>
 import { cssUrl, range } from '@/utils';
-import BoardColumn from './BoardColumn.vue';
+import BoardColumn from './BoardColumn';
 
 export default {
   components: {
